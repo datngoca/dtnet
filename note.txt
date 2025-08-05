@@ -1,0 +1,14 @@
+-Địa điểm: Thêm phần chọn đường phố (done)
+	USER:
+		Xem chi tiết: 
+			Phần tiêu đề chưa hiển thị tên địa điểm.điểm (done)
+-Ngôn ngữ: 
+	- xoá hết dữ liệu
+	- Khi xuyệt thì active luôn(done)
+-Country:
+	- Khi nhập my data : chọn ngôn sửa thành auto complete
+	- User : 
+		-Danh sách : thêm user, chưa duyệt thì cho maù đỏ (làm thẻ span có class = notice), đưa user nằm sát action
+		
+
+		
