@@ -135,7 +135,10 @@
     /* end: function change_place_in_list(place_uid) */
 
     function get_org_list(area_code, lang, street, place) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> ecb0f9b (updated from huy's computer)
         var url_org = url_post;
         if (!url_org.includes("?")) url_org += "?";
         url_org += "action=get_org&data_type=list";

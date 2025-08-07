@@ -21,11 +21,19 @@ $search = '';
 $area_str_code = "";
 $uid_street = "";
 $uid_place = "";
+<<<<<<< HEAD
+=======
+$uid_org = "";
+>>>>>>> ecb0f9b (updated from huy's computer)
 if (isset($_GET['search'])) $search = $_GET['search'];
 if (isset($_GET['area'])) $area_str_code = $_GET['area'];
 if (isset($_GET['lang'])) $lang = $_GET['lang'];
 if (isset($_GET['street'])) $uid_street = $_GET['street'];
 if (isset($_GET['place'])) $uid_place = $_GET['place'];
+<<<<<<< HEAD
+=======
+if (isset($_GET['org'])) $uid_org = $_GET['org'];   
+>>>>>>> ecb0f9b (updated from huy's computer)
 
 // if ($lang == '') if (isset($_COOKIE["lang_index"]))   $lang = $_COOKIE["lang_index"];
 // if ($area_str_code == '') if (isset($_COOKIE["area_index"]))   $area_str_code = $_COOKIE["area_index"];
@@ -61,7 +69,14 @@ $hidden_uid_street = $Form->hidden(array("name" => "data[uid_street]", "id" => "
 $div_select_place_list = $Html->div("", "id='div_select_place_list' style='display:none'");
 $hidden_uid_place = $Form->hidden(array("name" => "data[place_in]", "id" => "uid_place", "value" => $uid_place));
 
+<<<<<<< HEAD
 $str_area = $div_area_root . $div_select_area_list . $div_select_street_list . $div_select_place_list . $hidden_area_str_code . $hidden_area_root . $hidden_uid_street . $hidden_uid_place;
+=======
+$div_select_org_list = $Html->div("", "id='div_select_org_list' style='display:none'");
+$hidden_uid_org = $Form->hidden(array("name" => "data[uid_org]", "id" => "uid_org", "value" => $uid_org));
+
+$str_area = $div_area_root . $div_select_area_list . $div_select_street_list . $div_select_place_list . $div_select_org_list . $hidden_area_str_code . $hidden_area_root . $hidden_uid_street . $hidden_uid_place . $hidden_uid_org;
+>>>>>>> ecb0f9b (updated from huy's computer)
 
 
 
@@ -158,6 +173,14 @@ echo $this->run('all/js_all');
         margin-right: 10px;
     }
 
+<<<<<<< HEAD
+=======
+    #div_select_org_list {
+        float: left;
+        margin-right: 10px;
+    }
+
+>>>>>>> ecb0f9b (updated from huy's computer)
     #div_title {
         margin: 20px 0px 10px
     }

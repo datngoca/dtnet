@@ -6,7 +6,11 @@
     var str_code_parent_selected = '';
 
 
+<<<<<<< HEAD
     function change_area_input(str_code) {
+=======
+  function change_area_input(str_code) {
+>>>>>>> ecb0f9b (updated from huy's computer)
 
         $("#area_str_code_input").val(str_code);
 
@@ -65,14 +69,20 @@
         var url_street_input = url_post + "?action=get_street&data_type=input";
         url_street_input += "&area=" + area_code + "&street=" + uid_street + "&lang=" + lang;
 
+<<<<<<< HEAD
         console.log("get_street_input URL: ", url_street_input);
+=======
+>>>>>>> ecb0f9b (updated from huy's computer)
         return get_page(url_street_input, null, show_street_input, "div_street_input");
     }
 
     function change_street_input() {
         // Lưu giá trị street vào cookie
         var street_value = $("#select_street_input").val();
+<<<<<<< HEAD
         setCookie("street_index", street_value);
+=======
+>>>>>>> ecb0f9b (updated from huy's computer)
 
         get_place_input();
     }
@@ -82,6 +92,11 @@
         $("#div_input_place_in").css("display", "block");
         $("#div_input_place_in").html(result);
 
+<<<<<<< HEAD
+=======
+        var hidden_place_in_value = $("#hidden_place_in").val();
+
+>>>>>>> ecb0f9b (updated from huy's computer)
         /*autocomplete place input theo cấu trúc area*/
         $(".select_place_in_input").autocomplete();
     }
@@ -89,6 +104,7 @@
     function change_place_in_input() {
         // Cập nhật giá trị place_in được chọn
         var selected_place_in = $(".select_place_in_input").val();
+<<<<<<< HEAD
 
         $("#hidden_place_in").val(selected_place_in);
         $("#hidden_place_in_data").val(selected_place_in);
@@ -109,10 +125,47 @@
         url_input += "&street=" + uid_street_input + "&place=" + uid_place_in;
 
         console.log("get_place_input URL:", url_input);
+=======
+        get_org_input();
+    }
+
+    function get_place_input() {
+        let lang = $("#select_lang_input").val() || "";
+        let uid_street = $("#hidden_street").val() || "";
+        
+        /*get input place_in theo cấu trúc area*/
+        var url_input = url_post + "?action=get_place&data_type=input";
+        url_input += "&lang=" + lang + "&area=" + str_code_parent_selected;
+        url_input += "&street=" + uid_street;
+>>>>>>> ecb0f9b (updated from huy's computer)
 
         return get_page(url_input, null, show_input_place_in, "div_input_place_in");
     }
 
+<<<<<<< HEAD
+=======
+    function change_org_input(org_value) {
+        
+    }
+    function show_org_info(uid_org) {
+        /*show div_input_place_in*/
+        $("#div_input_org").css("display", "block");
+        $("#div_input_org").html(result);
+
+        /*autocomplete place input theo cấu trúc area*/
+        $(".select_org_input").autocomplete();
+    }
+    function get_org_input() {
+        let lang = $("#select_lang_input").val() || "";
+        let uid_street = $("#hidden_street").val() || "";
+        let place = $("#hidden_place_in").val() || "";
+        /*get input org theo cấu trúc area*/
+        var url_post_input = url_post + "?action=get_org&data_type=input";
+        url_post_input += "&lang=" + lang + "&area=" + area_str_code + "&street=" + uid_street_input + "&place=" + place;
+
+        return get_page(url_post_input, null, show_area_input, "div_select_org_input");
+    }
+>>>>>>> ecb0f9b (updated from huy's computer)
 
     function show_save_post(obj) {
         document.getElementById("button_save").disabled = false;
