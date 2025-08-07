@@ -202,6 +202,11 @@
         $("#div_post_form_input").css("display", "none");
         $("#div_post_list").hide();
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ecb0f9b (updated from huy's computer)
         /* show tab info default */
         tab_post.click('info');
 
@@ -300,6 +305,13 @@
         $("#select_type_input").autocomplete();
         $("#select_sent").autocomplete();
 
+<<<<<<< HEAD
+=======
+        $(".select_street_input").autocomplete();
+        $(".select_place_in_input").autocomplete();
+        $(".select_org_input").autocomplete();
+
+>>>>>>> ecb0f9b (updated from huy's computer)
 
         /*hide list*/
         $('#div_post_list').hide();

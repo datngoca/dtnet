@@ -59,6 +59,7 @@ $Form = $Html->load('Form');
 $form_row = '';
 
 /*select lang */
+<<<<<<< HEAD
 $array_lang_data = $this->request_api("org", "list");
 $array_lang = isset($array_lang_data["data"]) ? $array_lang_data["data"] : null;
 if ($array_org != null) array_unshift($array_org, array("uid" => "", "name" => "..."));
@@ -67,6 +68,14 @@ else $array_org[] = array("uid" => "", "name" => "...");
 $select_org = $Html->Form->selectbox(array("name" => "data[org]", "id" => "select_org_input", "onchange" => "change_org_input()"), $array_org, $org);
 $form_row .= $Form->row("Org", $select_org);
 
+=======
+$array_lang_data = $this->request_api("language", "list");
+$array_lang = isset($array_lang_data["data"]) ? $array_lang_data["data"] : null;
+if ($array_lang != null) array_unshift($array_lang, array("code" => "", "name" => "..."));
+else $array_lang[] = array("code" => "", "name" => "...");
+$select_lang = $Html->Form->selectbox(array("name" => "data[lang]", "id" => "select_lang_input", "onchange" => "change_lang_input()"), $array_lang, $lang);
+$form_row .= $Form->row("Lang", $select_lang);
+>>>>>>> ecb0f9b (updated from huy's computer)
 
 /* tạo input chọn khu vực */
 $str_selectbox_area_parent = "";
@@ -82,7 +91,11 @@ $form_row .= $Form->row("In Area", $div_selectbox_area . $hidden_str_code_parent
 $div_street_input = $Html->div("", "id = 'div_street_input' style = 'float: left; width: 100%'");
 $hidden_street = $Form->hidden(array("id" => "hidden_street", "value" => $uid_street));
 $hidden_street_data = $Form->hidden(array("name" => "data[uid_street]", "id" => "hidden_street_data", "value" => $uid_street));
+<<<<<<< HEAD
 $form_row .= $Form->row("Street", $div_street_input . $hidden_street);
+=======
+$form_row .= $Form->row("Street", $div_street_input . $hidden_street . $hidden_street_data);
+>>>>>>> ecb0f9b (updated from huy's computer)
 
 /*input place_in */
 $div_input_place_in = $Html->div("", "id = 'div_input_place_in' style = 'float: left; width: 100%'");
@@ -91,6 +104,7 @@ $hidden_place_in_data = $Form->hidden(array("name" => "data[place_in]", "id" => 
 
 $form_row .= $Form->row("In Place", $div_input_place_in . $hidden_place_in . $hidden_place_in_data);
 
+<<<<<<< HEAD
 /*select Org */
 $array_org_data = $this->request_api("org", "list");
 $array_lang = isset($array_org_data["data"]) ? $array_org_data["data"] : null;
@@ -98,6 +112,13 @@ if ($array_lang != null) array_unshift($array_lang, array("uid" => "", "name" =>
 else $array_lang[] = array("code" => "", "name" => "...");
 $select_lang = $Html->Form->selectbox(array("name" => "data[org]", "id" => "select_org_input", "onchange" => "change_lang_input()"), $array_lang, $lang);
 $form_row .= $Form->row("Lang", $select_lang);
+=======
+/*input org */
+$div_org_input = $Html->div("", "id = 'div_org_input' style = 'float: left; width: 100%'");
+$hidden_org = $Form->hidden(array("id" => "hidden_org", "value" => $uid_org));
+$hidden_org_data = $Form->hidden(array("name" => "data[uid_org]", "id" => "hidden_org_data", "value" => $uid_org));
+$form_row .= $Form->row("Org", $div_org_input . $hidden_org . $hidden_org_data);
+>>>>>>> ecb0f9b (updated from huy's computer)
 
 /* Type selection */
 $array_type = array(

@@ -31,7 +31,11 @@ if ($array_org != null) {
         $uid_org = $row["uid"];
         $lang = $row["lang"];
 
+<<<<<<< HEAD
         $str_name = $Html->span($row['name'], "id ='org_name_$uid_org_user'");
+=======
+        $str_name = $Html->span($row['name'], "id ='org_name_$uid_org'");
+>>>>>>> ecb0f9b (updated from huy's computer)
         $str_code = $Html->span($row['code'], "class = 'des2'");
         $des = $row["des"];
 

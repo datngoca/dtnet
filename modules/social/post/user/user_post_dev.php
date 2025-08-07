@@ -160,6 +160,14 @@ echo $this->run('user/js_user');
 
     #div_select_org_list {
         float: left;
+<<<<<<< HEAD
+=======
+        margin-right: 10px; 
+    }
+
+    #div_select_place_list {
+        float: left;
+>>>>>>> ecb0f9b (updated from huy's computer)
         margin-right: 10px;
     }
 

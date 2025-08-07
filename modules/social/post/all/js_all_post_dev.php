@@ -119,11 +119,49 @@
     function change_place_in_list(place_uid) {
         /* lưu lại place_uid vào biến uid_place */
         $("#uid_place").val(place_uid);
+<<<<<<< HEAD
 
+=======
+        // Reset org selection khi thay đổi place
+        $("#uid_org").val("");
+
+        let lang = document.getElementById("select_lang_list").value;
+        let street_uid = document.getElementById("uid_street").value;
+        let area_code = document.getElementById("area_str_code").value;
+
+        get_org_list(area_code, lang, street_uid, place_uid);
+>>>>>>> ecb0f9b (updated from huy's computer)
         list_post();
     }
     /* end: function change_place_in_list(place_uid) */
 
+<<<<<<< HEAD
+=======
+    function get_org_list(area_code, lang, street, place) {
+        var url_org = url_post;
+        if (!url_org.includes("?")) url_org += "?";
+        url_org += "action=get_org&data_type=list";
+        url_org += "&area=" + area_code + "&lang=" + lang + "&street=" + street + "&place=" + place;
+
+        return get_page(url_org, null, show_org_list, "div_select_org_list");
+    }
+
+    function show_org_list(result) {
+        $("#div_select_org_list").css("display", "block");
+        $("#div_select_org_list").html(result);
+
+        /*autocomplete org input*/
+        $(".select_org_list").autocomplete();
+        list_post();
+    }
+
+    function change_org_list(org_uid) {
+        /* lưu lại org_uid vào biến uid_org */
+        $("#uid_org").val(org_uid);
+        list_post();
+    }
+    /* end: function change_org_list(org_uid) */
+>>>>>>> ecb0f9b (updated from huy's computer)
 
     function list_post() {
 
@@ -134,6 +172,7 @@
         var uid_street = document.getElementById('uid_street') ? document.getElementById('uid_street').value : '';
         var lang = document.getElementById('select_lang_list') ? document.getElementById('select_lang_list').value : '';
         var place = document.getElementById('uid_place') ? document.getElementById('uid_place').value : '';
+<<<<<<< HEAD
         /* request post/index?action=list để lấy danh sách post */
         var url_list = url_post;
         if (!url_list.includes("?")) url_list += "?";
@@ -142,6 +181,17 @@
 
         console.log(url_list);
 
+=======
+        var org = document.getElementById('uid_org') ? document.getElementById('uid_org').value : '';
+
+        /* request post/all?action=list để lấy danh sách post */
+        var url_list = url_post;
+        if (!url_list.includes("?")) url_list += "?";
+        url_list += "action=list";
+        url_list += "&area=" + area_str_code + "&lang=" + lang + "&search=" + str_search + "&street=" + uid_street + "&place=" + place + "&org=" + org;
+
+        console.log(url_list);
+>>>>>>> ecb0f9b (updated from huy's computer)
         return get_page(url_list, null, show_post_list, "div_msg");
     }
     /* end: function list_post() */
